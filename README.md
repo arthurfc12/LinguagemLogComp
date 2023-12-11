@@ -4,47 +4,25 @@ CariocaLang - A linguagem de programação para cariocas de plantão
 
 ## EBNF (Extended Backus-Naur Form)
 
+```go
+Sentence = ( "λ" | Assign | Conditional | Loop )
+Assign = "var", Identifier, "=", Boolean Expression
+Conditional = "se", Boolean Expression, Block, [ "senao:", Block ]
+Loop = "pracada", Boolean Expression, Block
+Block = "{", Sentence, "}"
+Boolean Expression = Boolean Clause, { "ou", Boolean Clause }
+Boolean Clause = Relational Expression, { "e", Relational Expression }
+Relational Expression = Expression, { ( "flamengo" | "fluminense" | "igualzin" ), Expression }
+Expression = Term, { ( "maix" | "menox" | "ponto" ), Term }
+Term = Factor, { ( "multiplica" | "divide" ), Factor }
+Factor = Number | String | Identifier | ( ( "paporeto" | "cao" | "flamenguista" ), Factor )
+Identifier = Letter, { Letter | Digit }*
+Number = Digit+
+String = '"' { "λ" | Letter | Digit }* '"'
+Letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+Digit = "0" | "1" | "2" | ... | "9"
 ```
-Program = (λ | Declaration);
 
-Declaration = ("numero" | "texxto" | "cao"), Identifier, "(", { ("numero" | "texxto"), Identifier, { "," | ("numero" | "texxto"), Identifier} }, ")", Block;
-
-Block = ("[", Statement, "]" | "[", "]");
-
-Statement =  (((λ | Assignment | Print | Var_Type | Return), ";") | (Block | If | While));
-
-Factor = Int | String | (Identifier, { "(", { Relexpression, { "," | Relexpression } } ")" }) | ("maix" | "menox" | "flamenguista" Factor) | "(", Relexpression, ")" | Scan;
-
-Term = Factor, { ("multiplica" | "divide" | "tambem"), Factor };
-
-Expression = Term, { ("maix" | "meno" | "ou"), Term } ;
-
-Relexpression = EXPRESSION , {("flamengo" | "fluminense" | igualzin") , Expression } ;
-
-While = "ainda", "(", Relexpression ,")", Statement;
-
-If = "se", "(", Relexpression ,")", Statement, (("senao", Statement) | λ );
-
-Assignment = ("aquelaparada", Identifier, "igualzinho", Relexpression) | ( "(", { Relexpression, { "," | Relexpression } }, ")" );
-
-Return = "brota" , "(", Relexpression, ")";
-
-Print  "paporeto", "(", Relexpression, ")";
-
-Scan = "falae", "(", ")";
-
-Identifier = Letter, { Letter | Digit | "_" };
-
-Digit = (0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9);
-
-Int = Digit, { Digit };
-
-Var_Type = ("numero" | "texxto") , Identifier , (λ | {"," , Identifier });
-
-String = """, (Letter | Digit), """;
-
-LETTER = ( a | ... | z | A | ... | Z ) ;
-```
 
 ## Referências Bibliográficas
 
