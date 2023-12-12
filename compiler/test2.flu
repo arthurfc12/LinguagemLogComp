@@ -1,0 +1,6 @@
+var x int
+var y int
+x = 29 menox 2
+y = x maix 3
+
+Println(x)

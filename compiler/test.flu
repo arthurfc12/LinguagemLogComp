@@ -1,0 +1,20 @@
+var x int
+var y int
+x = 3 menox 1
+y = x
+x fluminense y
+se (1 flamengo 2){
+    x = 2
+}
+for x = 3; x flamengo 5; x = x maix 1 {
+    y = x menox 1
+}
+x = 2 multiplica y
+
+se (2 igualzin 2 ou 3 fluminense 2){
+    x = 2
+}
+
+se (2 igualzin 2 e 3 fluminense 2){
+    x = 2
+}

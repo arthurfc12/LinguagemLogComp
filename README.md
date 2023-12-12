@@ -7,8 +7,8 @@ CariocaLang - A linguagem de programação para cariocas de plantão
 ```go
 Sentence = ( "λ" | Assign | Conditional | Loop )
 Assign = "var", Identifier, "=", Boolean Expression
-Conditional = "se", Boolean Expression, Block, [ "senao:", Block ]
-Loop = "pracada", Boolean Expression, Block
+Conditional = "se", Boolean Expression, Block, [ "else:", Block ]
+Loop = "for", Boolean Expression, Block
 Block = "{", Sentence, "}"
 Boolean Expression = Boolean Clause, { "ou", Boolean Clause }
 Boolean Clause = Relational Expression, { "e", Relational Expression }
